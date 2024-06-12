@@ -53,12 +53,7 @@ products.forEach((product) => {
         </button>
     </div>
   `
-
-
 })
-
-
-// console.log(productsHTML);
 
 document.querySelector('.products-grid').innerHTML = productsHTML
 
@@ -82,7 +77,12 @@ document.querySelectorAll('.add-to-cart-button')
             })
         }
 
-       
-        console.log(cart);
+        let cartQuantity = 0
+
+        cart.forEach((item) =>{
+            cartQuantity += item.quantity
+        })
+    
+        document.querySelector('.cart-quantity').innerHTML = cartQuantity
     })
 })
